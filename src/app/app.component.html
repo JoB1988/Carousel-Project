@@ -1,4 +1,4 @@
-<div class="mat-elevation-z8 content">
+<!-- <div class="content">
   <div class="header-content">
     <h2 class="header-content-title"> Carteiras </h2>
   </div>
@@ -6,7 +6,6 @@
 
     <div>
       <h3 class="body-content-title">Minhas Carteiras</h3>
-      <!-- <mat-divider></mat-divider> -->
       <div class="body-content-carousel">
         <button (click)="scrollWallets('up', 'right')"><em class="fas fa-chevron-left fa-3x"></em></button>
         <div #scrollMyWallets class="body-content-carousel-content">
@@ -21,7 +20,6 @@
 
     <div class="body-content-down">
       <h2 class="body-content-title">Carteiras Públicas</h2>
-      <!-- <mat-divider></mat-divider> -->
       <div class="body-content-carousel">
         <button (click)="scrollWallets('down', 'right')"><em class="fas fa-chevron-left fa-3x"></em></button>
         <div #scrollOtherWallets class="body-content-carousel-content">
@@ -34,22 +32,30 @@
       <h3 class="body-content-title">Quantidade de Carteiras Públicas: {{ arrayImage.length }}</h3>
     </div>
 
-    <!-- <div class="gallery js-flickity">
+    <div class="gallery js-flickity">
       <img (click)="method()" class="gallery-cell" [src]="image" *ngFor="let image of arrayImage; let i = index">
-    </div> -->
-
+    </div>
   </div>
 </div>
 
-<h1>Flickity - line pageDots</h1>
-
-<!-- Flickity HTML init -->
 <div class="carousel" data-flickity='{ "draggable": false, "contain": true, "cellAlign": "center" }'>
   <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
   <div class="carousel-cell"></div>
+</div> -->
+<div class="container">
+  <div #scrollMyWallets style="display: flex; height: 400px; min-width: 100%; overflow: hidden;">
+    <div style="height: 100%;" *ngFor="let image of arrayImage; let i = index">
+      <img style="height: 100%;" [src]="image">
+    </div>
+  </div>
+  <div style="display: flex;
+  justify-content: space-between; height: 400px; min-width: 100%; margin-top: -400px;">
+    <button (click)="scrollWallets('up', 'right')"><em class="fas fa-chevron-left fa-3x"></em></button>
+    <button (click)="scrollWallets('up', 'left')"><em class="fas fa-chevron-right fa-3x"></em></button>
+  </div>
 </div>
 
 <router-outlet></router-outlet>
