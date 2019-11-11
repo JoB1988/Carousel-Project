@@ -1,21 +1,55 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="mat-elevation-z8 content">
+  <div class="header-content">
+    <h2 class="header-content-title"> Carteiras </h2>
+  </div>
+  <div class="body-content">
+
+    <div>
+      <h3 class="body-content-title">Minhas Carteiras</h3>
+      <!-- <mat-divider></mat-divider> -->
+      <div class="body-content-carousel">
+        <button (click)="scrollWallets('up', 'right')"><em class="fas fa-chevron-left fa-3x"></em></button>
+        <div #scrollMyWallets class="body-content-carousel-content">
+          <div class="body-content-carousel-content-wallet" *ngFor="let image of arrayImage; let i = index">
+            <img [src]="image">
+          </div>
+        </div>
+        <button (click)="scrollWallets('up', 'left')"><em class="fas fa-chevron-right fa-3x"></em></button>
+      </div>
+      <h3 class="body-content-title">Quantidade de Carteiras: {{ arrayImage.length }}</h3>
+    </div>
+
+    <div class="body-content-down">
+      <h2 class="body-content-title">Carteiras Públicas</h2>
+      <!-- <mat-divider></mat-divider> -->
+      <div class="body-content-carousel">
+        <button (click)="scrollWallets('down', 'right')"><em class="fas fa-chevron-left fa-3x"></em></button>
+        <div #scrollOtherWallets class="body-content-carousel-content">
+          <div class="body-content-carousel-content-wallet" *ngFor="let image of arrayImage; let i = index">
+            <img [src]="image">
+          </div>
+        </div>
+        <button (click)="scrollWallets('down', 'left')"><em class="fas fa-chevron-right fa-3x"></em></button>
+      </div>
+      <h3 class="body-content-title">Quantidade de Carteiras Públicas: {{ arrayImage.length }}</h3>
+    </div>
+
+    <!-- <div class="gallery js-flickity">
+      <img (click)="method()" class="gallery-cell" [src]="image" *ngFor="let image of arrayImage; let i = index">
+    </div> -->
+
+  </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+
+<h1>Flickity - line pageDots</h1>
+
+<!-- Flickity HTML init -->
+<div class="carousel" data-flickity='{ "draggable": false, "contain": true, "cellAlign": "center" }'>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+  <div class="carousel-cell"></div>
+</div>
 
 <router-outlet></router-outlet>

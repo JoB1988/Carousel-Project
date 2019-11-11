@@ -1,1 +1,105 @@
-/* You can add global styles to this file, and also import other style files */
+/* external css: flickity.css */
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
+
+.carousel {
+  background: #EEE;
+}
+
+.flickity-viewport{
+    margin: 0 10px;
+    height: 220px !important;
+}
+
+.flickity-slider {
+    display: flex;
+    align-items: center;
+}
+
+.carousel-cell {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  margin-right: 10px;
+  background: #8C8;
+  border-radius: 5px;
+  counter-increment: carousel-cell;
+}
+
+.carousel-cell:hover {
+    cursor:pointer;
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+  text-align: center;
+  content: counter(carousel-cell);
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
+}
+
+/* position dots up a bit */
+.flickity-page-dots {
+  bottom: -22px;
+}
+/* dots are lines */
+.flickity-page-dots .dot {
+  height: 4px !important;
+  width: 40px !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+.flickity-prev-next-button {
+    background-color: transparent !important;
+    height: 220px !important;
+    border-radius: 0 !important;
+}
+
+.flickity-button:hover { 
+    box-shadow: 0 2px 4px rgba($color: #ffffff, $alpha:0.12), 0 1.5px 3px rgba($color: #ffffff, $alpha:0.24);
+    background-color: rgba($color: #ffffff, $alpha: .1) !important;
+}
+
+.flickity-prev-next-button{
+    svg{
+        color: rgba(255, 114, 0, 0.7);
+    }
+    &:hover{
+        svg{
+            color: rgba(255, 114, 0, 1);
+        }
+    }
+}
+
+
+
+.flickity-prev-next-button.next {
+    right: 0px !important;
+    // svg{
+    //     path{
+    //         d: path('M166.9 264.5l-117.8 116c-4.7 4.7-12.3 4.7-17 0l-7.1-7.1c-4.7-4.7-4.7-12.3 0-17L127.3 256 25.1 155.6c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0l117.8 116c4.6 4.7 4.6 12.3-.1 17z') !important;
+    //     }
+    // }
+}
+
+.flickity-prev-next-button.previous {
+    left: 0px !important;
+    // svg{
+    //     path{
+    //         d: path('M25.1 247.5l117.8-116c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L64.7 256l102.2 100.4c4.7 4.7 4.7 12.3 0 17l-7.1 7.1c-4.7 4.7-12.3 4.7-17 0L25 264.5c-4.6-4.7-4.6-12.3.1-17z') !important;
+    //     }
+    // }
+}
+
+.flickity-page-dots .dot { 
+    background: #FF7200 !important;
+}
+
+.flickity-button:disabled {
+    display: none;
+}
